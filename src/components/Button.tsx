@@ -19,12 +19,13 @@ interface ButtonWithoutIconProps extends ButtonBaseProps {
 export const Button: ParentComponent<
   ButtonWithIconProps | ButtonWithoutIconProps
 > = (props) => {
+  // @ts-expect-error Expression produces a union type that is too complex to represent
   const [local, others] = splitProps(props, ['class', 'loading', 'icon'])
 
   return (
     <button
       class={twMerge(
-        'btn flex items-center',
+        'btn flex items-center leading-8',
         local.loading ? 'btn-disabled' : local.class,
       )}
       {...others}

@@ -1,7 +1,7 @@
 import ky from 'ky'
 import { ResourceActions, createSignal } from 'solid-js'
 import { toast } from 'solid-toast'
-import { useRequest } from '~/signals'
+import { useGithubAPI, useRequest } from '~/signals'
 import {
   BackendVersion,
   Config,
@@ -10,6 +10,22 @@ import {
   Rule,
   RuleProvider,
 } from '~/types'
+
+export const checkEndpointAPI = (url: string, secret: string) =>
+  ky
+    .get(url, {
+      headers: secret
+        ? {
+            Authorization: `Bearer ${secret}`,
+          }
+        : {},
+    })
+    .then(({ ok }) => ok)
+    .catch((err) => {
+      const { message } = err as Error
+
+      toast.error(message)
+    })
 
 export const closeAllConnectionsAPI = () => {
   const request = useRequest()
@@ -155,7 +171,7 @@ export const proxyProviderHealthCheckAPI = (providerName: string) => {
 
   return request
     .get(`providers/proxies/${encodeURIComponent(providerName)}/healthcheck`, {
-      timeout: 5 * 1000,
+      timeout: 20 * 1000,
     })
     .json<Record<string, number>>()
 }
@@ -232,39 +248,66 @@ export const updateRuleProviderAPI = (providerName: string) => {
 }
 
 type ReleaseAPIResponse = {
+  tag_name: string
+  body: string
   assets: { name: string }[]
 }
 
-export const isUpdateAvailableAPI = async (versionResponse: string) => {
-  const repositoryURL = 'https://api.github.com/repos/MetaCubeX/mihomo'
-  const match = /(alpha|beta|meta)-?(\w+)/.exec(versionResponse)
+type ReleaseReturn = {
+  isUpdateAvailable: boolean
+  changelog?: string
+}
 
-  if (!match) {
-    return false
+export const frontendReleaseAPI = async (
+  currentVersion: string,
+): Promise<ReleaseReturn> => {
+  const githubAPI = useGithubAPI()
+
+  const { tag_name, body } = await githubAPI
+    .get(`repos/MetaCubeX/metacubexd/releases/latest`)
+    .json<ReleaseAPIResponse>()
+
+  return {
+    isUpdateAvailable: tag_name !== currentVersion,
+    changelog: body,
+  }
+}
+
+export const backendReleaseAPI = async (
+  currentVersion: string,
+): Promise<ReleaseReturn> => {
+  const githubAPI = useGithubAPI()
+
+  const repositoryURL = 'repos/MetaCubeX/mihomo'
+  const match = /(alpha|beta|meta)-?(\w+)/.exec(currentVersion)
+
+  if (!match)
+    return {
+      isUpdateAvailable: false,
+    }
+
+  const release = async (url: string) => {
+    const { assets, body } = await githubAPI
+      .get(`${repositoryURL}/${url}`)
+      .json<ReleaseAPIResponse>()
+
+    const alreadyLatest = assets.some(({ name }) => name.includes(version))
+
+    return {
+      isUpdateAvailable: !alreadyLatest,
+      changelog: body,
+    }
   }
 
   const channel = match[1],
     version = match[2]
 
-  if (channel === 'meta') {
-    const { assets } = await ky
-      .get(`${repositoryURL}/releases/latest`)
-      .json<ReleaseAPIResponse>()
+  if (channel === 'meta') return await release('releases/latest')
 
-    const alreadyLatest = assets.some(({ name }) => name.includes(version))
+  if (channel === 'alpha')
+    return await release('releases/tags/Prerelease-Alpha')
 
-    return !alreadyLatest
+  return {
+    isUpdateAvailable: false,
   }
-
-  if (channel === 'alpha') {
-    const { assets } = await ky
-      .get(`${repositoryURL}/releases/tags/Prerelease-Alpha`)
-      .json<ReleaseAPIResponse>()
-
-    const alreadyLatest = assets.some(({ name }) => name.includes(version))
-
-    return !alreadyLatest
-  }
-
-  return false
 }

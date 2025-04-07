@@ -3,11 +3,12 @@ import { latencyQualityMap, useProxies } from '~/signals'
 
 export const ProxyPreviewBar = (props: {
   proxyNameList: string[]
+  testUrl: string | null
   now?: string
 }) => {
   const { getLatencyByName } = useProxies()
   const latencyList = createMemo(() =>
-    props.proxyNameList.map((name) => getLatencyByName(name)),
+    props.proxyNameList.map((name) => getLatencyByName(name, props.testUrl)),
   )
 
   const all = createMemo(() => latencyList().length)
@@ -40,22 +41,22 @@ export const ProxyPreviewBar = (props: {
   )
 
   return (
-    <div class="flex items-center gap-2 py-2">
+    <div class="flex items-center gap-2">
       <div class="my-1 flex flex-1 items-center justify-center overflow-hidden rounded-2xl [&>*]:h-2">
         <div
-          class="bg-success"
+          class="bg-green-600"
           style={{
             width: `${(good() * 100) / all()}%`, // cant use tw class, otherwise dynamic classname won't be generated
           }}
         />
         <div
-          class="bg-warning"
+          class="bg-yellow-500"
           style={{
             width: `${(middle() * 100) / all()}%`,
           }}
         />
         <div
-          class="bg-error"
+          class="bg-red-500"
           style={{
             width: `${(slow() * 100) / all()}%`,
           }}
@@ -68,7 +69,9 @@ export const ProxyPreviewBar = (props: {
         />
       </div>
 
-      <Latency name={props.now} />
+      <Show when={props.now}>
+        <Latency proxyName={props.now!} testUrl={props.testUrl} />
+      </Show>
     </div>
   )
 }

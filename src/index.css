@@ -1,9 +1,19 @@
 @import '@fontsource/fira-sans';
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes: all;
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind variants;
+@theme {
+  --font-twemoji: 'system-ui', 'Twemoji Mozilla', 'Fira Sans', monospace;
+  --font-no-twemoji: 'system-ui', 'Fira Sans', 'monospace';
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('assets/FiraSans-Regular.ttf') format('truetype');
+}
 
 @font-face {
   font-family: 'Twemoji Mozilla';

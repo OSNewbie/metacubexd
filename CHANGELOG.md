@@ -1,5 +1,454 @@
 # Changelog
 
+## [1.186.1](https://github.com/MetaCubeX/metacubexd/compare/v1.186.0...v1.186.1) (2025-03-15)
+
+
+### Bug Fixes
+
+* **overview:** update stats component background and change chart type for better visual clarity ([dc1df6c](https://github.com/MetaCubeX/metacubexd/commit/dc1df6c382346e90d3657dfc1e953a5caa40aa41))
+
+## [1.186.0](https://github.com/MetaCubeX/metacubexd/compare/v1.185.0...v1.186.0) (2025-03-15)
+
+
+### Features
+
+* **proxies:** restructure layout of ProxyNode display for improved readability ([9c0da7a](https://github.com/MetaCubeX/metacubexd/commit/9c0da7a3897723d4de9d05867cf2d07a81481115))
+
+## [1.185.0](https://github.com/MetaCubeX/metacubexd/compare/v1.184.0...v1.185.0) (2025-03-15)
+
+
+### Features
+
+* **proxy-node:** update ProxyNodeCard styling and structure for improved layout and clarity ([8c5d184](https://github.com/MetaCubeX/metacubexd/commit/8c5d1845a7f5e780014f2f8288f6e5602687225a))
+
+## [1.184.0](https://github.com/MetaCubeX/metacubexd/compare/v1.183.0...v1.184.0) (2025-03-15)
+
+
+### Features
+
+* **latency:** enhance loading state with proxy latency updates ([69015f1](https://github.com/MetaCubeX/metacubexd/commit/69015f1187fc63fc28a550569eb9f3746a4d846c))
+* **proxy-node:** add UDP indicator and improve special types display ([cae651f](https://github.com/MetaCubeX/metacubexd/commit/cae651fa1cb15a0d620503741039b7a9f49f486b))
+
+## [1.183.0](https://github.com/MetaCubeX/metacubexd/compare/v1.182.0...v1.183.0) (2025-03-15)
+
+
+### Features
+
+* **versions:** update Tooltip.Trigger classes for better styling consistency ([9ad414c](https://github.com/MetaCubeX/metacubexd/commit/9ad414c46baf5755aa26bbe36000b61266945879))
+
+## [1.182.0](https://github.com/MetaCubeX/metacubexd/compare/v1.181.2...v1.182.0) (2025-03-15)
+
+
+### Features
+
+* **versions:** enable force update by default, closes [#1376](https://github.com/MetaCubeX/metacubexd/issues/1376) ([fd11412](https://github.com/MetaCubeX/metacubexd/commit/fd114127d62556278825d6837585c49ef6e07f80))
+
+
+### Bug Fixes
+
+* **versions:** prevent update trigger during ongoing update process ([ed55418](https://github.com/MetaCubeX/metacubexd/commit/ed554188bd75eb86baf2e6f22c5d4c66097946f7))
+
+## [1.181.2](https://github.com/MetaCubeX/metacubexd/compare/v1.181.1...v1.181.2) (2025-03-14)
+
+
+### Bug Fixes
+
+* **versions:** reload page after successful update for frontend and backend ([edf0d47](https://github.com/MetaCubeX/metacubexd/commit/edf0d47eb55f34df4dfe2979f28a5d1c1b421e4c))
+
+## [1.181.1](https://github.com/MetaCubeX/metacubexd/compare/v1.181.0...v1.181.1) (2025-03-14)
+
+
+### Bug Fixes
+
+* **versions:** disable update when none available or during update process ([e050d07](https://github.com/MetaCubeX/metacubexd/commit/e050d07de4fac94a6c695f660f9edeb7fc043a3c))
+
+## [1.181.0](https://github.com/MetaCubeX/metacubexd/compare/v1.180.0...v1.181.0) (2025-03-14)
+
+
+### Features
+
+* add changelog component and update version handling ([bf7c535](https://github.com/MetaCubeX/metacubexd/commit/bf7c53550e5e305f104b92d542b3755c33da8c4f))
+
+## [1.180.0](https://github.com/MetaCubeX/metacubexd/compare/v1.179.0...v1.180.0) (2025-03-12)
+
+
+### Features
+
+* add custom font theme variables for Twemoji and system fonts ([af8b3e2](https://github.com/MetaCubeX/metacubexd/commit/af8b3e2f7003e9831aa3c8a941f5bd5bb8fefc41))
+
+## [1.179.0](https://github.com/MetaCubeX/metacubexd/compare/v1.178.0...v1.179.0) (2025-03-11)
+
+
+### Features
+
+* enhance ProxyNodeCard badge opacity and font weight ([3fdf74d](https://github.com/MetaCubeX/metacubexd/commit/3fdf74d57a6259237ad482b1c4b5ca85a9762ac1)), closes [#1361](https://github.com/MetaCubeX/metacubexd/issues/1361)
+
+## [1.178.0](https://github.com/MetaCubeX/metacubexd/compare/v1.177.1...v1.178.0) (2025-03-11)
+
+
+### Features
+
+* update ProxyNodeCard badge styling ([e44e190](https://github.com/MetaCubeX/metacubexd/commit/e44e190aaf77d6247289285600b04860ed7d72b3))
+
+## [1.177.1](https://github.com/MetaCubeX/metacubexd/compare/v1.177.0...v1.177.1) (2025-03-10)
+
+
+### Bug Fixes
+
+* bg color ([#1355](https://github.com/MetaCubeX/metacubexd/issues/1355)) ([6c84d16](https://github.com/MetaCubeX/metacubexd/commit/6c84d16966ae265b4410b7117dab867062da5ffa))
+
+## [1.177.0](https://github.com/MetaCubeX/metacubexd/compare/v1.176.2...v1.177.0) (2025-03-07)
+
+
+### Features
+
+* set default DNS query target same as the placeholder ([#1346](https://github.com/MetaCubeX/metacubexd/issues/1346)) ([9874c74](https://github.com/MetaCubeX/metacubexd/commit/9874c7429a01cf0701a8894bc15c22d97bebb549))
+
+## [1.176.2](https://github.com/MetaCubeX/metacubexd/compare/v1.176.1...v1.176.2) (2025-01-23)
+
+
+### Bug Fixes
+
+* **Connections:** SourceIP filter and tagging ([#1286](https://github.com/MetaCubeX/metacubexd/issues/1286)) ([a1c9d2f](https://github.com/MetaCubeX/metacubexd/commit/a1c9d2f03282f976ee20a78ecf405de5952c1207))
+
+## [1.176.1](https://github.com/MetaCubeX/metacubexd/compare/v1.176.0...v1.176.1) (2024-12-28)
+
+
+### Bug Fixes
+
+* **rules:** fix rules search ([#1267](https://github.com/MetaCubeX/metacubexd/issues/1267)) ([#1272](https://github.com/MetaCubeX/metacubexd/issues/1272)) ([30f9bb4](https://github.com/MetaCubeX/metacubexd/commit/30f9bb4854c9318c135468502ce1bc0586bdee81))
+
+## [1.176.0](https://github.com/MetaCubeX/metacubexd/compare/v1.175.0...v1.176.0) (2024-12-24)
+
+
+### Features
+
+* trigger release ([62a89d4](https://github.com/MetaCubeX/metacubexd/commit/62a89d4ee3d8b0b9c98a6eebbf51f5fe8c362879))
+
+## [1.175.0](https://github.com/MetaCubeX/metacubexd/compare/v1.174.3...v1.175.0) (2024-12-24)
+
+
+### Features
+
+* trigger release ([c761086](https://github.com/MetaCubeX/metacubexd/commit/c7610860d54ce7984ca290311c0b1ae5cb668256))
+
+## [1.174.3](https://github.com/MetaCubeX/metacubexd/compare/v1.174.2...v1.174.3) (2024-12-24)
+
+
+### Bug Fixes
+
+* table tr keyed ([#1261](https://github.com/MetaCubeX/metacubexd/issues/1261)) ([cd27359](https://github.com/MetaCubeX/metacubexd/commit/cd273598a9fc7b25f023621e2cfc99b41353262d))
+
+## [1.174.2](https://github.com/MetaCubeX/metacubexd/compare/v1.174.1...v1.174.2) (2024-12-21)
+
+
+### Bug Fixes
+
+* the health check for the proxy provider sometimes do not respond ([#1255](https://github.com/MetaCubeX/metacubexd/issues/1255)) ([96bc233](https://github.com/MetaCubeX/metacubexd/commit/96bc233f89003072d066332ce7b0c97adb107064))
+
+## [1.174.1](https://github.com/MetaCubeX/metacubexd/compare/v1.174.0...v1.174.1) (2024-12-19)
+
+
+### Bug Fixes
+
+* fixed latency color ([#1251](https://github.com/MetaCubeX/metacubexd/issues/1251)) ([1a66ee6](https://github.com/MetaCubeX/metacubexd/commit/1a66ee684789b2cee8a69f9229e9d2f3f002af78))
+
+## [1.174.0](https://github.com/MetaCubeX/metacubexd/compare/v1.173.3...v1.174.0) (2024-12-14)
+
+
+### Features
+
+* **i18n:** added support for Russian language ([#1234](https://github.com/MetaCubeX/metacubexd/issues/1234)) ([5e033d9](https://github.com/MetaCubeX/metacubexd/commit/5e033d9f76c95ba7e3d9e7528a43f783736858fa))
+
+## [1.173.3](https://github.com/MetaCubeX/metacubexd/compare/v1.173.2...v1.173.3) (2024-12-04)
+
+
+### Bug Fixes
+
+* I18n unable to get value for name ([#1206](https://github.com/MetaCubeX/metacubexd/issues/1206)) ([92a2e39](https://github.com/MetaCubeX/metacubexd/commit/92a2e3985d3596b9048dd49fd69987fcadf0e515))
+
+## [1.173.2](https://github.com/MetaCubeX/metacubexd/compare/v1.173.1...v1.173.2) (2024-11-29)
+
+
+### Bug Fixes
+
+* latency not correct when proxy group has custom test url ([#1199](https://github.com/MetaCubeX/metacubexd/issues/1199)) ([23e56cf](https://github.com/MetaCubeX/metacubexd/commit/23e56cfde81fcd0453106e477cdf9e17f98019ae))
+
+## [1.173.1](https://github.com/MetaCubeX/metacubexd/compare/v1.173.0...v1.173.1) (2024-11-27)
+
+
+### Bug Fixes
+
+* latency not correct when set custom url in config ([#1189](https://github.com/MetaCubeX/metacubexd/issues/1189)) ([af30813](https://github.com/MetaCubeX/metacubexd/commit/af3081371d3c6fb7a748b8c9a11cb5dcd5b31dca))
+
+## [1.173.0](https://github.com/MetaCubeX/metacubexd/compare/v1.172.0...v1.173.0) (2024-11-24)
+
+
+### Features
+
+* modes list for sing-box offical ([#1182](https://github.com/MetaCubeX/metacubexd/issues/1182)) ([1ca89fb](https://github.com/MetaCubeX/metacubexd/commit/1ca89fb6c736bcdb4d4b84552828fc7df3fa131d))
+
+## [1.172.0](https://github.com/MetaCubeX/metacubexd/compare/v1.171.0...v1.172.0) (2024-11-23)
+
+
+### Features
+
+* support to set icon color to the theme color when proxy icon starts with `data:image/svg+xml` ([#1166](https://github.com/MetaCubeX/metacubexd/issues/1166)) ([29ed55c](https://github.com/MetaCubeX/metacubexd/commit/29ed55cf50298578a9fa92a209a1c9f70882ea43))
+
+## [1.171.0](https://github.com/MetaCubeX/metacubexd/compare/v1.170.0...v1.171.0) (2024-11-13)
+
+
+### Features
+
+* trigger release ([2df7158](https://github.com/MetaCubeX/metacubexd/commit/2df7158f8a1a5b3e81e0ffd68eb1918582002d62))
+
+## [1.170.0](https://github.com/MetaCubeX/metacubexd/compare/v1.169.0...v1.170.0) (2024-11-13)
+
+
+### Features
+
+* dual column for proxies render ([#1152](https://github.com/MetaCubeX/metacubexd/issues/1152)) ([96869c9](https://github.com/MetaCubeX/metacubexd/commit/96869c96c6291456b0720a5248f2cf7fe5630c48))
+
+
+### Bug Fixes
+
+* Fix the available update indicator causing horizontal overflow on mobile. ([#1153](https://github.com/MetaCubeX/metacubexd/issues/1153)) ([ff41847](https://github.com/MetaCubeX/metacubexd/commit/ff41847fd933e64e30c6f7b501e720e0d2fc5158))
+
+## [1.169.0](https://github.com/MetaCubeX/metacubexd/compare/v1.168.0...v1.169.0) (2024-11-01)
+
+
+### Features
+
+* proxy type support i18n ([#1135](https://github.com/MetaCubeX/metacubexd/issues/1135)) ([b0f32b5](https://github.com/MetaCubeX/metacubexd/commit/b0f32b5e5583ca673ade44bbbe058900b4630a74))
+
+## [1.168.0](https://github.com/MetaCubeX/metacubexd/compare/v1.167.4...v1.168.0) (2024-10-19)
+
+
+### Features
+
+* bump version ([64a2005](https://github.com/MetaCubeX/metacubexd/commit/64a20050d9f07943a6671002fe7c8cc22092fe5f))
+
+## [1.167.4](https://github.com/MetaCubeX/metacubexd/compare/v1.167.3...v1.167.4) (2024-10-13)
+
+
+### Bug Fixes
+
+* **config:** selected option ([d6ce137](https://github.com/MetaCubeX/metacubexd/commit/d6ce1376a67bdd8b439730505563084cb1ba082e))
+
+## [1.167.3](https://github.com/MetaCubeX/metacubexd/compare/v1.167.2...v1.167.3) (2024-10-13)
+
+
+### Bug Fixes
+
+* **i18n:** time locale not working ([e6fa749](https://github.com/MetaCubeX/metacubexd/commit/e6fa749a28e55b9ea85a5ccae71346823fd2567c))
+
+## [1.167.2](https://github.com/MetaCubeX/metacubexd/compare/v1.167.1...v1.167.2) (2024-10-13)
+
+
+### Bug Fixes
+
+* **rules:** restore name display ([cdef0e8](https://github.com/MetaCubeX/metacubexd/commit/cdef0e8355fe0c25ee35d1345d54fda050f1fece))
+
+## [1.167.1](https://github.com/MetaCubeX/metacubexd/compare/v1.167.0...v1.167.1) (2024-10-12)
+
+
+### Bug Fixes
+
+* **proxies:** set break all on proxy name ([a31d2e8](https://github.com/MetaCubeX/metacubexd/commit/a31d2e8d148c81f93b82d6bce55b0fff7410f61d))
+
+## [1.167.0](https://github.com/MetaCubeX/metacubexd/compare/v1.166.0...v1.167.0) (2024-10-12)
+
+
+### Features
+
+* **connections:** reduce default visible columns ([ca9e3ba](https://github.com/MetaCubeX/metacubexd/commit/ca9e3ba57e4849c7349c8ff4fab018989b057d10))
+
+## [1.166.0](https://github.com/MetaCubeX/metacubexd/compare/v1.165.0...v1.166.0) (2024-10-12)
+
+
+### Features
+
+* **proxies:** gradient gradient gradient ([ca13549](https://github.com/MetaCubeX/metacubexd/commit/ca1354943450bc927b508df9fac935047cb30d42))
+
+## [1.165.0](https://github.com/MetaCubeX/metacubexd/compare/v1.164.0...v1.165.0) (2024-10-12)
+
+
+### Features
+
+* **connections:** enable autoCloseConns by default ([dfcc750](https://github.com/MetaCubeX/metacubexd/commit/dfcc750a1231d2614b5db92619bd71b89661cacc))
+* **proxies:** mount tooltip portal within rootElement ([554b361](https://github.com/MetaCubeX/metacubexd/commit/554b3611844f355347ee99466c879fba035610cc))
+* **proxies:** show latency result only when possible ([4314e64](https://github.com/MetaCubeX/metacubexd/commit/4314e64785a2caa5f1dbdb2896f2b28af8716f41))
+* **rules:** search input align with tabs ([ab018c5](https://github.com/MetaCubeX/metacubexd/commit/ab018c529dea2f5af14cdd8b6724c01cecbbf59c))
+
+## [1.164.0](https://github.com/MetaCubeX/metacubexd/compare/v1.163.0...v1.164.0) (2024-10-12)
+
+
+### Features
+
+* **proxies:** add subtle padding between title and footer ([e7ef8b3](https://github.com/MetaCubeX/metacubexd/commit/e7ef8b373587c791283e6aaf8c11c3d0bb19367b))
+* **proxies:** display specialTypes on mobile in title ([0973686](https://github.com/MetaCubeX/metacubexd/commit/09736863dfb7ca8738e70a0460ea401630182dab))
+
+## [1.163.0](https://github.com/MetaCubeX/metacubexd/compare/v1.162.1...v1.163.0) (2024-10-12)
+
+
+### Features
+
+* **proxies:** drop ipv6 latency test & display ([cdd60cf](https://github.com/MetaCubeX/metacubexd/commit/cdd60cfc37999da0f04bb7d286d8edd55f841dcb))
+
+## [1.162.1](https://github.com/MetaCubeX/metacubexd/compare/v1.162.0...v1.162.1) (2024-10-12)
+
+
+### Bug Fixes
+
+* **config:** options are not getting reflected in fav light/dark theme select, closes [#1079](https://github.com/MetaCubeX/metacubexd/issues/1079) ([ae1158d](https://github.com/MetaCubeX/metacubexd/commit/ae1158d9577f3e4c9bf6efe5fb2737065559f777))
+
+## [1.162.0](https://github.com/MetaCubeX/metacubexd/compare/v1.161.0...v1.162.0) (2024-10-12)
+
+
+### Features
+
+* **config:** refresh backend version after core gets updated ([73b7e3e](https://github.com/MetaCubeX/metacubexd/commit/73b7e3e40a4a8ad18f5fece8260217ddb4bcfddb))
+* **proxies:** add proxy latency test history timeline ([1e7dcb1](https://github.com/MetaCubeX/metacubexd/commit/1e7dcb13bc212c1b2e717bbaa72e9583edce41f4))
+
+## [1.161.0](https://github.com/MetaCubeX/metacubexd/compare/v1.160.1...v1.161.0) (2024-10-11)
+
+
+### Features
+
+* embed fira sans web font ([b3ed3b5](https://github.com/MetaCubeX/metacubexd/commit/b3ed3b50a5a074a7a30b754c8fa235bb63ca09cc))
+
+## [1.160.1](https://github.com/MetaCubeX/metacubexd/compare/v1.160.0...v1.160.1) (2024-10-11)
+
+
+### Bug Fixes
+
+* **proxies:** proxy type should be positioned relative to the card ([78ec9e5](https://github.com/MetaCubeX/metacubexd/commit/78ec9e5d6c574e85405f7138782f39cce3a8a345))
+
+## [1.160.0](https://github.com/MetaCubeX/metacubexd/compare/v1.159.0...v1.160.0) (2024-10-11)
+
+
+### Features
+
+* **proxies:** update layout, disable twemoji font by default ([3d8fa08](https://github.com/MetaCubeX/metacubexd/commit/3d8fa080c351fa155c8c0edc7e4f6fee06438693))
+
+## [1.159.0](https://github.com/MetaCubeX/metacubexd/compare/v1.158.0...v1.159.0) (2024-10-11)
+
+
+### Features
+
+* **proxies:** add render in two columns option back ([1fd22d3](https://github.com/MetaCubeX/metacubexd/commit/1fd22d3ece0905f1f22acb94d7d6a7a86a7a31e9))
+
+## [1.158.0](https://github.com/MetaCubeX/metacubexd/compare/v1.157.0...v1.158.0) (2024-10-10)
+
+
+### Features
+
+* **connections:** add isClosingConnections spinner ([23193c5](https://github.com/MetaCubeX/metacubexd/commit/23193c5c98e41cc73250c4567f2558ee6f8943fb))
+
+## [1.157.0](https://github.com/MetaCubeX/metacubexd/compare/v1.156.0...v1.157.0) (2024-10-10)
+
+
+### Features
+
+* **proxies:** adjust collapsible grid columns ([3d1a234](https://github.com/MetaCubeX/metacubexd/commit/3d1a2349780f780976192ed8cc06ada6b46c069b))
+
+## [1.156.0](https://github.com/MetaCubeX/metacubexd/compare/v1.155.0...v1.156.0) (2024-10-10)
+
+
+### Features
+
+* **proxies:** add multi-column render back ([9f7f8d0](https://github.com/MetaCubeX/metacubexd/commit/9f7f8d0161103c222747b4d65f330057edd87d81))
+* **proxies:** replace gradient with pure background color ([e273439](https://github.com/MetaCubeX/metacubexd/commit/e273439f688790f5ced9f0fac9f2ac5d7064650e))
+
+## [1.155.0](https://github.com/MetaCubeX/metacubexd/compare/v1.154.0...v1.155.0) (2024-10-10)
+
+
+### Features
+
+* **config:** clear dns query results when input content gets cleared ([04cae65](https://github.com/MetaCubeX/metacubexd/commit/04cae65805fac8102246f57aa438fc054bc68174))
+* **config:** rearrange settings ([90c3d15](https://github.com/MetaCubeX/metacubexd/commit/90c3d15616860c27c80b47e4190414a68ec395c2))
+
+
+### Bug Fixes
+
+* **config:** missing translation for running mode ([705f651](https://github.com/MetaCubeX/metacubexd/commit/705f6513469466ac74c137f396c135b31da31804))
+
+## [1.154.0](https://github.com/MetaCubeX/metacubexd/compare/v1.153.2...v1.154.0) (2024-10-10)
+
+
+### Features
+
+* **config:** check for frontend version update ([657c180](https://github.com/MetaCubeX/metacubexd/commit/657c180e056e345776ac1a21966c4c3eafdb1d09))
+
+## [1.153.2](https://github.com/MetaCubeX/metacubexd/compare/v1.153.1...v1.153.2) (2024-10-10)
+
+
+### Bug Fixes
+
+* **pwa:** items in includeAssets cannot be empty string ([ab794e7](https://github.com/MetaCubeX/metacubexd/commit/ab794e73e3fce6de51485aa1837344117941fc9f))
+
+## [1.153.1](https://github.com/MetaCubeX/metacubexd/compare/v1.153.0...v1.153.1) (2024-10-10)
+
+
+### Bug Fixes
+
+* **rules:** text spacing of `updated at` ([342119e](https://github.com/MetaCubeX/metacubexd/commit/342119e01e5a4fe02ca6cb68902d08d52f36c486))
+
+## [1.153.0](https://github.com/MetaCubeX/metacubexd/compare/v1.152.0...v1.153.0) (2024-10-10)
+
+
+### Features
+
+* **proxies:** overhaul the look of proxies page, drop renderInTwoColumns support ([698362f](https://github.com/MetaCubeX/metacubexd/commit/698362f1c7b31837ac60bdfde7aac1deccb2ea35))
+
+
+### Bug Fixes
+
+* **proxies:** double specialType if statement ([0c004be](https://github.com/MetaCubeX/metacubexd/commit/0c004be98f062f79806a4ef95949f380d17571e1))
+* **proxies:** prevent proxyName from overflowing ([4037597](https://github.com/MetaCubeX/metacubexd/commit/40375979b8d1328ba3dde5e0a61d24271dfd4b3e))
+
+## [1.152.0](https://github.com/MetaCubeX/metacubexd/compare/v1.151.0...v1.152.0) (2024-10-09)
+
+
+### Features
+
+* show current page title, closes [#474](https://github.com/MetaCubeX/metacubexd/issues/474) ([9c76d7f](https://github.com/MetaCubeX/metacubexd/commit/9c76d7ff76886495208809d3e0f2efc6e90de2f3))
+
+## [1.151.0](https://github.com/MetaCubeX/metacubexd/compare/v1.150.0...v1.151.0) (2024-10-01)
+
+
+### Features
+
+* config for icon height and margin-right ([#1041](https://github.com/MetaCubeX/metacubexd/issues/1041)) ([bf26a53](https://github.com/MetaCubeX/metacubexd/commit/bf26a539bce4a995bf254f1653d98c3b5f1c0a22))
+
+## [1.150.0](https://github.com/MetaCubeX/metacubexd/compare/v1.149.0...v1.150.0) (2024-09-24)
+
+
+### Features
+
+* proxy group icon ([#1023](https://github.com/MetaCubeX/metacubexd/issues/1023)) ([0b1d472](https://github.com/MetaCubeX/metacubexd/commit/0b1d472d62734cba0bb75efa6acc787957b571c6))
+
+## [1.149.0](https://github.com/MetaCubeX/metacubexd/compare/v1.148.1...v1.149.0) (2024-09-14)
+
+
+### Features
+
+* reconnect ws when logs level changed ([#1003](https://github.com/MetaCubeX/metacubexd/issues/1003)) ([246a1ac](https://github.com/MetaCubeX/metacubexd/commit/246a1ac053ef56a1930d3ad2ae3bd0784e01c513))
+
+## [1.148.1](https://github.com/MetaCubeX/metacubexd/compare/v1.148.0...v1.148.1) (2024-09-12)
+
+
+### Bug Fixes
+
+* proxy group ipv6 test failed ([#996](https://github.com/MetaCubeX/metacubexd/issues/996)) ([c43b84b](https://github.com/MetaCubeX/metacubexd/commit/c43b84b1149939bf604e6798931f221fa191bc6b))
+
+## [1.148.0](https://github.com/MetaCubeX/metacubexd/compare/v1.147.0...v1.148.0) (2024-09-08)
+
+
+### Features
+
+* make persisted for ipv6 result ([#983](https://github.com/MetaCubeX/metacubexd/issues/983)) ([2078051](https://github.com/MetaCubeX/metacubexd/commit/2078051d7c8433ceda4240d41952cff32308990c))
+
 ## [1.147.0](https://github.com/MetaCubeX/metacubexd/compare/v1.146.2...v1.147.0) (2024-08-29)
 
 

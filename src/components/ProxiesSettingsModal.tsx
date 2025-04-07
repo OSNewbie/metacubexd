@@ -6,19 +6,21 @@ import { useI18n } from '~/i18n'
 import {
   autoCloseConns,
   hideUnAvailableProxies,
+  iconHeight,
+  iconMarginRight,
   latencyTestTimeoutDuration,
   proxiesOrderingType,
   proxiesPreviewType,
   renderProxiesInTwoColumns,
   setAutoCloseConns,
   setHideUnAvailableProxies,
+  setIconHeight,
+  setIconMarginRight,
   setLatencyTestTimeoutDuration,
   setProxiesOrderingType,
   setProxiesPreviewType,
   setRenderProxiesInTwoColumns,
   setUrlForLatencyTest,
-  setUrlIPv6SupportTest,
-  urlForIPv6SupportTest,
   urlForLatencyTest,
 } from '~/signals'
 
@@ -51,7 +53,7 @@ export const ProxiesSettingsModal: Component<{
           <ConfigTitle withDivider>{t('urlForLatencyTest')}</ConfigTitle>
 
           <input
-            class="input input-bordered w-full"
+            class="input"
             value={urlForLatencyTest()}
             onChange={(e) => setUrlForLatencyTest(e.target.value)}
           />
@@ -64,7 +66,7 @@ export const ProxiesSettingsModal: Component<{
 
           <input
             type="number"
-            class="input input-bordered w-full"
+            class="input"
             value={latencyTestTimeoutDuration()}
             onChange={(e) =>
               setLatencyTestTimeoutDuration(Number(e.target.value))
@@ -72,21 +74,11 @@ export const ProxiesSettingsModal: Component<{
           />
         </div>
 
-        <div class="flex flex-col">
-          <ConfigTitle withDivider>{t('urlForIPv6SupportTest')}</ConfigTitle>
-
-          <input
-            class="input input-bordered w-full"
-            value={urlForIPv6SupportTest()}
-            onChange={(e) => setUrlIPv6SupportTest(e.target.value?.trim())}
-          />
-        </div>
-
         <div>
           <ConfigTitle withDivider>{t('proxiesSorting')}</ConfigTitle>
 
           <select
-            class="select select-bordered w-full"
+            class="select"
             value={proxiesOrderingType()}
             onChange={(e) =>
               setProxiesOrderingType(e.target.value as PROXIES_ORDERING_TYPE)
@@ -103,7 +95,7 @@ export const ProxiesSettingsModal: Component<{
         </div>
 
         <div>
-          <ConfigTitle withDivider>{t('hideUnAvailableProxies')}</ConfigTitle>
+          <ConfigTitle withDivider>{t('hideUnavailableProxies')}</ConfigTitle>
 
           <div class="flex w-full justify-center">
             <input
@@ -132,7 +124,7 @@ export const ProxiesSettingsModal: Component<{
           <ConfigTitle withDivider>{t('proxiesPreviewType')}</ConfigTitle>
 
           <select
-            class="select select-bordered w-full"
+            class="select"
             value={proxiesPreviewType()}
             onChange={(e) =>
               setProxiesPreviewType(e.target.value as PROXIES_PREVIEW_TYPE)
@@ -142,6 +134,26 @@ export const ProxiesSettingsModal: Component<{
               {(value) => <option value={value}>{t(value)}</option>}
             </For>
           </select>
+        </div>
+
+        <div>
+          <ConfigTitle withDivider>{t('iconHeight')}</ConfigTitle>
+
+          <input
+            type="number"
+            class="input"
+            value={iconHeight()}
+            onChange={(e) => setIconHeight(Number(e.target.value))}
+          />
+
+          <ConfigTitle withDivider>{t('iconMarginRight')}</ConfigTitle>
+
+          <input
+            type="number"
+            class="input"
+            value={iconMarginRight()}
+            onChange={(e) => setIconMarginRight(Number(e.target.value))}
+          />
         </div>
       </div>
     </Modal>

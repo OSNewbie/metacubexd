@@ -11,6 +11,7 @@ import {
   favNightTheme,
   setCurTheme,
   setLatestConnectionMsg,
+  setRootElement,
   useTwemoji,
   useWsRequest,
 } from '~/signals'
@@ -33,8 +34,9 @@ export const App: ParentComponent = ({ children }) => {
 
   return (
     <div
+      ref={(el) => setRootElement(el)}
       class={twMerge(
-        'relative flex h-screen flex-col overscroll-y-none subpixel-antialiased',
+        'relative flex h-screen flex-col overscroll-y-none bg-base-100 subpixel-antialiased',
         useTwemoji() ? 'font-twemoji' : 'font-no-twemoji',
       )}
       data-theme={curTheme()}
@@ -43,7 +45,7 @@ export const App: ParentComponent = ({ children }) => {
 
       <div class="flex-1 overflow-y-auto p-2 sm:p-4">{children}</div>
 
-      <Show when={endpoint()}>
+      <Show when={!!endpoint()}>
         <ProtectedResources />
       </Show>
     </div>

@@ -1,38 +1,41 @@
-import { LATENCY_QUALITY_MAP_HTTP } from '~/constants'
-import { useI18n } from '~/i18n'
-import { latencyQualityMap, useProxies } from '~/signals'
+import { JSX, ParentComponent } from 'solid-js'
+import { twMerge } from 'tailwind-merge'
+import { getLatencyClassName } from '~/helpers'
+import { urlForLatencyTest, useProxies } from '~/signals'
 
-export const Latency = (props: { name?: string; class?: string }) => {
-  const [t] = useI18n()
-  const { getLatencyByName } = useProxies()
+interface Props extends JSX.HTMLAttributes<HTMLSpanElement> {
+  proxyName: string
+  testUrl: string | null
+}
+
+export const Latency: ParentComponent<Props> = (props) => {
+  const [local, others] = splitProps(props, ['class'])
+  const { getLatencyByName, proxyLatencyTestingMap } = useProxies()
+  const updating = createMemo(() => proxyLatencyTestingMap()[others.proxyName])
   const [textClassName, setTextClassName] = createSignal('')
-  const latency = createMemo(() => {
-    return getLatencyByName(props.name || '')
-  })
+  const latency = createMemo(() =>
+    getLatencyByName(
+      others.proxyName || '',
+      others.testUrl || urlForLatencyTest(),
+    ),
+  )
 
   createEffect(() => {
-    setTextClassName('text-success')
-
-    if (latency() > latencyQualityMap().HIGH) {
-      setTextClassName('text-error')
-    } else if (latency() > latencyQualityMap().MEDIUM) {
-      setTextClassName('text-warning')
-    }
+    setTextClassName(getLatencyClassName(latency()))
   })
 
   return (
-    <Show
-      when={
-        typeof latency() === 'number' &&
-        latency() !== LATENCY_QUALITY_MAP_HTTP.NOT_CONNECTED
-      }
+    <span
+      class={twMerge(
+        'badge flex w-11 items-center justify-center whitespace-nowrap',
+        textClassName(),
+        local.class,
+      )}
+      {...others}
     >
-      <span
-        class={`whitespace-nowrap text-xs ${textClassName()} ${props.class}`}
-      >
-        {latency()}
-        {t('ms')}
-      </span>
-    </Show>
+      <Show when={updating()} fallback={latency() || '---'}>
+        <span class="loading loading-sm loading-infinity" />
+      </Show>
+    </span>
   )
 }
